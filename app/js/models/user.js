@@ -20,8 +20,8 @@ class User {
 		// personal notes about the user
 		let result = new Promise((resolve, reject) => {
 			Promise.all([
-				ajax.getJson(userProfileUrl),
-				ajax.getJson(userReposUrl),
+				ajax.getJson(userProfileUrl, {cache: true, ttl: 60}), // TTL in minutes
+				ajax.getJson(userReposUrl, {cache: true, ttl: 60}),
 				ajax.getJson(userNotesUrl),
 			])
 			.then(values => {

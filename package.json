@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "es6-promise": "^2.3.0",
+    "lscache": "^1.0.5",
     "page": "^1.6.3",
     "ractive": "^0.7.3",
     "whatwg-fetch": "^0.9.0"

@@ -1,5 +1,3 @@
-'use strict';
-
 import Ractive from 'ractive';
 import Template from '../views/user-page.html';
 import UserProfile from './user/user-profile-section';
@@ -17,12 +15,8 @@ var UserPage = Ractive.extend({
 		console.log('UserPage::oninit# User data:', this.get('req'));
 		let request = this.get('req');
 		this.set({
-			username: request.params.username,
 			user: request.body.user
 		});
-	},
-	onrender: function() {
-		console.log('UserPage::onrender');
 	},
 	data: {}
 });

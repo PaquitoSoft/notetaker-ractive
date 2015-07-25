@@ -9,7 +9,7 @@ import routes from './config/routes';
 
 // TODO - Require Bootstrap CSS
 
-var App = new Ractive({
+let App = new Ractive({
 	el: '#app',
 
 	template: Template,
@@ -42,6 +42,10 @@ var App = new Ractive({
 				},
 				componentName: navigationContext.pageName
 			});
+
+			if (this.get('componentName') === navigationContext.pageName) {
+				this.findComponent('Router').reset();
+			}
 		}
 	},
 

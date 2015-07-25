@@ -11,6 +11,11 @@ class User {
 		this.notes = notes;
 	}
 
+	addNote(newNote) {
+		this.notes.push(newNote);
+		return ajax.put(`${FIREBASE_BASE_URL}/${this.profile.login}.json`, this.notes);
+	}
+
 	static findByName(username) {
 		let userNotesUrl = `${FIREBASE_BASE_URL}/${username}.json`,
 			userProfileUrl = `${GITHUB_BASE_URL}/users/${username}`,

@@ -4,7 +4,7 @@
   "description": "Note taker Ractive.JS version",
   "main": "index.js",
   "scripts": {
-    "start": "webpack -w; node_modules/node-static/bin/cli.js app"
+    "start": "webpack -w & node_modules/node-static/bin/cli.js app"
   },
   "author": "Pauqitosoft",
   "license": "ISC",

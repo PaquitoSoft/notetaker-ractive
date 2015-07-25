@@ -1,0 +1,15 @@
+<div>
+	<h3>User repos</h3>
+	<ul class="list-group">
+		{{#repos}}
+			<li class="list-group-item">
+				{{#html_url}}
+					<h4><a href="{{html_url}}" target="_blank">{{name}}</a></h4>
+				{{/html_url}}
+				{{#description}}
+					<p>{{description}}</p>
+				{{/description}}
+			</li>
+		{{/repos}}
+	</ul>
+</div>

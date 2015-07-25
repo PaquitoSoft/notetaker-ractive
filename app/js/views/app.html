@@ -12,4 +12,10 @@
 	<div class="container">
 		<Router componentName="{{componentName}}"/>
 	</div>
+	{{#errorMsg}}
+		<div class="alert alert-danger alert-dismissible" style="position: absolute; top: 80px; right: 10px;" role="alert">
+			<button type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+			<strong>Error:</strong> {{errorMsg}}
+		</div>
+	{{/errorMsg}}
 </div>

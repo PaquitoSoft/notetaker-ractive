@@ -28,16 +28,28 @@ var App = new Ractive({
 		componentName: 'HomePage'
 	},
 
-	onNavigation: function(pageName, navigationContext) {
-		console.log('APP::onNavigation# Navigating to:', pageName, 'with context:', navigationContext);
-		// this.set('componentName', pageName);
-		this.set({
-			req: {
-				params: navigationContext.params,
-				body: navigationContext.state
-			},
-			componentName: pageName
-		});
+	onNavigation: function(error, navigationContext) {
+		console.log('APP::onNavigation# Navigating to:', navigationContext.pageName, 'with context:', navigationContext);
+
+		if (error) {
+			console.warn('App::onNavigation# Error navigating:', error);
+			this.showAlert(error.message);
+		} else {
+			this.set({
+				req: {
+					params: navigationContext.params,
+					body: navigationContext.state
+				},
+				componentName: navigationContext.pageName
+			});
+		}
+	},
+
+	showAlert: function(message) {
+		this.set('errorMsg', message);
+		setTimeout(() => {
+			this.set('errorMsg', null);
+		}, 2500);
 	}
 });
 

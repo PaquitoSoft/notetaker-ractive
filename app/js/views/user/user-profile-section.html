@@ -1,15 +1,15 @@
 <div>
 	<h3> User Profile </h3>
 	<ul class="list-group">
-		{{#bio.avatar_url}}<li class="list-group-item"> <img src={bio.avatar_url} class="img-rounded img-responsive"/></li>{{/bio.avatar_url}}
-		{{#bio.name}}<li class="list-group-item">Name: {{bio.name}}</li>{{/bio.name}}
-		{{#bio.login}}<li class="list-group-item">Username: {{bio.login}}</li>{{/bio.login}}
-		{{#bio.email}}<li class="list-group-item">Email: {{bio.email}}</li>{{/bio.email}}
-		{{#bio.location}}<li class="list-group-item">Location: {{bio.location}}</li>{{/bio.location}}
-		{{#bio.company}}<li class="list-group-item">Company: {{bio.company}}</li>{{/bio.company}}
-		{{#bio.followers}}<li class="list-group-item">Followers: {{bio.followers}}</li>{{/bio.followers}}
-		{{#bio.following}}<li class="list-group-item">Following: {{bio.following}}</li>{{/bio.following}}
-		{{#bio.public_repos}}<li class="list-group-item">Public Repos: {{bio.public_repos}}</li>{{/bio.public_repos}}
-		{{#bio.blog}}<li class="list-group-item">Blog: {{bio.blog}}</li>{{/bio.blog}}
+		{{#user.profile.avatar_url}}<li class="list-group-item"> <img src={{user.profile.avatar_url}} class="img-rounded img-responsive" style="min-heigth: 261px;"/></li>{{/user.profile.avatar_url}}
+		{{#user.profile.name}}<li class="list-group-item">Name: {{user.profile.name}}</li>{{/user.profile.name}}
+		{{#user.profile.login}}<li class="list-group-item">Username: {{user.profile.login}}</li>{{/user.profile.login}}
+		{{#user.profile.email}}<li class="list-group-item">Email: {{user.profile.email}}</li>{{/user.profile.email}}
+		{{#user.profile.location}}<li class="list-group-item">Location: {{user.profile.location}}</li>{{/user.profile.location}}
+		{{#user.profile.company}}<li class="list-group-item">Company: {{user.profile.company}}</li>{{/user.profile.company}}
+		{{#user.profile.followers}}<li class="list-group-item">Followers: {{user.profile.followers}}</li>{{/user.profile.followers}}
+		{{#user.profile.following}}<li class="list-group-item">Following: {{user.profile.following}}</li>{{/user.profile.following}}
+		{{#user.profile.public_repos}}<li class="list-group-item">Public Repos: {{user.profile.public_repos}}</li>{{/user.profile.public_repos}}
+		{{#user.profile.blog}}<li class="list-group-item">Blog: <a href="{{user.profile.blog}}" target="_blank">{{user.profile.blog}}</a></li>{{/user.profile.blog}}
 	</ul>
 </div>

@@ -29,8 +29,15 @@ var App = new Ractive({
 	},
 
 	onNavigation: function(pageName, navigationContext) {
-		console.log('APP::onNavigation# Navigating to:', pageName);
-		this.set('componentName', pageName);
+		console.log('APP::onNavigation# Navigating to:', pageName, 'with context:', navigationContext);
+		// this.set('componentName', pageName);
+		this.set({
+			req: {
+				params: navigationContext.params,
+				body: navigationContext.state
+			},
+			componentName: pageName
+		});
 	}
 });
 

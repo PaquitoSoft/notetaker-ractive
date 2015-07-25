@@ -23,6 +23,7 @@ var Router = Ractive.extend({
 	},
 	onrender: function() {
 		console.log('Router::onrender# Rendering router component:', this.get('componentName'));
+		console.log('Router::onrender# Request:', this.get('req'));
 	}
 });
 

@@ -13,11 +13,13 @@ var UserPage = Ractive.extend({
 		Repos: Repos,
 		Notes: Notes
 	},
-	onconstruct: function() {
-		console.log('UserPage::onconstruct');
-	},
 	oninit: function() {
-		console.log('UserPage::oninit');
+		console.log('UserPage::oninit# User data:', this.get('req'));
+		let request = this.get('req');
+		this.set({
+			username: request.params.username,
+			user: request.body.user
+		});
 	},
 	onrender: function() {
 		console.log('UserPage::onrender');

@@ -12,12 +12,16 @@
     "babel-core": "^5.8.3",
     "babel-loader": "^5.3.2",
     "bootstrap": "^3.3.5",
+    "exports-loader": "^0.6.2",
+    "imports-loader": "^0.6.4",
     "node-static": "^0.7.7",
     "raw-loader": "^0.5.1",
     "webpack": "^1.10.3"
   },
   "dependencies": {
+    "es6-promise": "^2.3.0",
     "page": "^1.6.3",
-    "ractive": "^0.7.3"
+    "ractive": "^0.7.3",
+    "whatwg-fetch": "^0.9.0"
   }
 }

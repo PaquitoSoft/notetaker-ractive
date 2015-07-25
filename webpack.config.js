@@ -1,3 +1,6 @@
+/* global module, require */
+var webpack = require('webpack');
+
 module.exports = {
 	entry: './app/js/app.js',
 	output: {
@@ -15,5 +18,12 @@ module.exports = {
 				loader: 'raw'
 			}
 		]
-	}
+	},
+	// This is to load polyfills (http://mts.io/2015/04/08/webpack-shims-polyfills/)
+	plugins: [
+		new webpack.ProvidePlugin({
+			fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
+			'es6-promise': 'es6-promise'
+		})
+	]
 };

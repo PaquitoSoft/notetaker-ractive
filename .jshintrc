@@ -25,5 +25,6 @@
 	"sub": true,
 	"globals": {},
 
-	"esnext": true
+	"esnext": true,
+	"strict": false
 }

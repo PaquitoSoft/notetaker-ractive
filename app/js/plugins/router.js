@@ -1,5 +1,3 @@
-'use strict';
-
 import page from 'page';
 import Ractive from 'ractive';
 
@@ -21,8 +19,8 @@ function init(routes, onNavigation) {
 	});
 }
 
-function navTo(url) {
-	page(url);
+function navTo(url, context) {
+	page.show(url, context);
 }
 
 export default {

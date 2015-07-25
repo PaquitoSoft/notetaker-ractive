@@ -1,6 +1,9 @@
-'use strict';
-
 import Ractive from 'ractive';
+
+/*
+	This router has been built on top of the ideas from this Stack Overflow question:
+	http://stackoverflow.com/questions/31075341/how-to-create-ractives-subcomponents-dynamically-and-change-them-programmatical
+*/
 
 var Router = Ractive.extend({
 	template: '<router-handler/>',

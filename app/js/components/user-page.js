@@ -22,6 +22,10 @@ var UserPage = Ractive.extend({
 			console.log('UserPage::createNote# Adding new note to user:', this.get('user').profile.login);
 			this.get('user').addNote(newNote);
 		});
+
+		this.on('*.RemoveUserNote', (note) => {
+			this.get('user').removeNote(note);
+		});
 	}
 });
 UserPage._name = 'UserPage';

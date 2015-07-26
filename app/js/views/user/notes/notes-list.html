@@ -1,5 +1,10 @@
 <ul class="list-group">
 	{{#each notes}}
-		<li class="list-group-item">{{.}}</li>
+		<li class="list-group-item">
+			<span>{{.}}</span>
+			<span class="pull-right">
+				<span class="glyphicon glyphicon-remove" on-click="deleteNote" style="cursor: pointer;"></span>
+			</span>
+		</li>
 	{{/each}}
 </ul>

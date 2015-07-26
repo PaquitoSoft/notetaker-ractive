@@ -16,6 +16,14 @@ class User {
 		return ajax.put(`${FIREBASE_BASE_URL}/${this.profile.login.toLowerCase()}.json`, this.notes);
 	}
 
+	removeNote(note) {
+		var index = this.notes.indexOf(note);
+		if (index >= 0) {
+			this.notes.splice(index, 1);
+			return ajax.put(`${FIREBASE_BASE_URL}/${this.profile.login.toLowerCase()}.json`, this.notes);
+		}
+	}
+
 	static findByName(username) {
 		let userNotesUrl = `${FIREBASE_BASE_URL}/${username.toLowerCase()}.json`,
 			userProfileUrl = `${GITHUB_BASE_URL}/users/${username}`,

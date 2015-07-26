@@ -9,6 +9,7 @@ var AddNote = Ractive.extend({
 		this.on('createNote', (rEvent) => {
 			rEvent.original.preventDefault();
 			this.fire('AddUserNote', this.get('newNote'));
+			this.set('newNote', '');
 		});
 	},
 	data: {

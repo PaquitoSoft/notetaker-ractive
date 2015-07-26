@@ -11,14 +11,18 @@ var UserPage = Ractive.extend({
 		Repos: Repos,
 		Notes: Notes
 	},
-	oninit: function() {
-		console.log('UserPage::oninit# User data:', this.get('req'));
+	oninit() {
 		let request = this.get('req');
 		this.set({
 			user: request.body.user
 		});
-	},
-	data: {}
+
+		// *.*, *.AddUserNote, AddNote.*, AddNote.AddUserNote
+		this.on('*.AddUserNote', (newNote) => {
+			console.log('UserPage::createNote# Adding new note to user:', this.get('user').profile.login);
+			this.get('user').addNote(newNote);
+		});
+	}
 });
 UserPage._name = 'UserPage';
 

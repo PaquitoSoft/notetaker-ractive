@@ -3,15 +3,12 @@ import User from '../../../models/user';
 import Template from '../../../views/user/notes/add-note.html';
 
 var AddNote = Ractive.extend({
+	isolated: true,
 	template: Template,
 	oninit: function() {
 		this.on('createNote', (rEvent) => {
-			let newNote = this.get('newNote');
 			rEvent.original.preventDefault();
-
-			console.log('AddNote::createNote# Adding new note to user:', this.get('user').profile.login);
-
-			this.get('user').addNote(this.get('newNote'));
+			this.fire('AddUserNote', this.get('newNote'));
 		});
 	},
 	data: {

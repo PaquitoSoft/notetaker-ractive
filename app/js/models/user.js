@@ -8,7 +8,7 @@ class User {
 	constructor(profile, repos, notes) {
 		this.profile = profile;
 		this.repos = repos;
-		this.notes = notes;
+		this.notes = notes || []; // Default parameters values are only valid for undefined ones
 	}
 
 	addNote(newNote) {

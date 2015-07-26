@@ -1,13 +1,9 @@
-'use strict';
-
 import Ractive from 'ractive';
 import Template from './views/app.html';
 import RouterComponent from './components/layout/router';
 import SearchGithub from './components/layout/search-github';
-import _router from './plugins/router';
+import * as RouterPlugin from './plugins/router';
 import routes from './config/routes';
-
-// TODO - Require Bootstrap CSS
 
 let App = new Ractive({
 	el: '#app',
@@ -15,17 +11,19 @@ let App = new Ractive({
 	template: Template,
 
 	components: {
+		// We need a first blank component before router tells us which page we must show
+		Void: Ractive.extend({template:''}),
 		SearchGithub: SearchGithub,
 		Router: RouterComponent
 	},
 
 	onrender: function() {
-		_router.init(routes, this.onNavigation.bind(this));
+		RouterPlugin.init(routes, this.onNavigation.bind(this));
 		console.info('App::onrender# Application rendered!');
 	},
 
 	data: {
-		componentName: 'HomePage'
+		componentName: 'Void'
 	},
 
 	onNavigation: function(error, navigationContext) {

@@ -15,7 +15,7 @@ function navigationHandler(routeHandler, onNavigation) {
 	};
 }
 
-function init(routes, onNavigation) {
+export function init(routes, onNavigation) {
 
 	routes.forEach((routeHandler, path) => {
 		page(path, navigationHandler(routeHandler, onNavigation));
@@ -26,11 +26,6 @@ function init(routes, onNavigation) {
 	});
 }
 
-function navTo(url, context) {
-	page.show(url, context);
+export function navTo(url) {
+	page.show(url);
 }
-
-export default {
-	init: init,
-	navTo: navTo
-};

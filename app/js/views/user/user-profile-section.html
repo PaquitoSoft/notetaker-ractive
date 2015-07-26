@@ -1,15 +1,15 @@
 <div>
 	<h3> User Profile </h3>
 	<ul class="list-group">
-		{{#user.profile.avatar_url}}<li class="list-group-item"> <img src={{user.profile.avatar_url}} class="img-rounded img-responsive" style="min-heigth: 261px;"/></li>{{/user.profile.avatar_url}}
-		{{#user.profile.name}}<li class="list-group-item">Name: {{user.profile.name}}</li>{{/user.profile.name}}
-		{{#user.profile.login}}<li class="list-group-item">Username: {{user.profile.login}}</li>{{/user.profile.login}}
-		{{#user.profile.email}}<li class="list-group-item">Email: {{user.profile.email}}</li>{{/user.profile.email}}
-		{{#user.profile.location}}<li class="list-group-item">Location: {{user.profile.location}}</li>{{/user.profile.location}}
-		{{#user.profile.company}}<li class="list-group-item">Company: {{user.profile.company}}</li>{{/user.profile.company}}
-		{{#user.profile.followers}}<li class="list-group-item">Followers: {{user.profile.followers}}</li>{{/user.profile.followers}}
-		{{#user.profile.following}}<li class="list-group-item">Following: {{user.profile.following}}</li>{{/user.profile.following}}
-		{{#user.profile.public_repos}}<li class="list-group-item">Public Repos: {{user.profile.public_repos}}</li>{{/user.profile.public_repos}}
-		{{#user.profile.blog}}<li class="list-group-item">Blog: <a href="{{user.profile.blog}}" target="_blank">{{user.profile.blog}}</a></li>{{/user.profile.blog}}
+		{{#profile.avatar_url}}<li class="list-group-item"> <img src={{profile.avatar_url}} class="img-rounded img-responsive" style="min-height: 261px;"/></li>{{/profile.avatar_url}}
+		{{#profile.name}}<li class="list-group-item">Name: {{profile.name}}</li>{{/profile.name}}
+		{{#profile.login}}<li class="list-group-item">Username: {{profile.login}}</li>{{/profile.login}}
+		{{#profile.email}}<li class="list-group-item">Email: {{profile.email}}</li>{{/profile.email}}
+		{{#profile.location}}<li class="list-group-item">Location: {{profile.location}}</li>{{/profile.location}}
+		{{#profile.company}}<li class="list-group-item">Company: {{profile.company}}</li>{{/profile.company}}
+		{{#profile.followers}}<li class="list-group-item">Followers: {{profile.followers}}</li>{{/profile.followers}}
+		{{#profile.following}}<li class="list-group-item">Following: {{profile.following}}</li>{{/profile.following}}
+		{{#profile.public_repos}}<li class="list-group-item">Public Repos: {{profile.public_repos}}</li>{{/profile.public_repos}}
+		{{#profile.blog}}<li class="list-group-item">Blog: <a href="{{profile.blog}}" target="_blank">{{profile.blog}}</a></li>{{/profile.blog}}
 	</ul>
 </div>

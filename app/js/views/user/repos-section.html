@@ -1,7 +1,7 @@
 <div>
-	<h3>User repos</h3>
+	<h3>User repos ({{repos.length}})</h3>
 	<ul class="list-group">
-		{{#user.repos}}
+		{{#each repos}}
 			<li class="list-group-item">
 				{{#html_url}}
 					<h4><a href="{{html_url}}" target="_blank">{{name}}</a></h4>
@@ -10,6 +10,6 @@
 					<p>{{description}}</p>
 				{{/description}}
 			</li>
-		{{/user.repos}}
+		{{/each}}
 	</ul>
 </div>

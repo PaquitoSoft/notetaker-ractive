@@ -1,14 +1,9 @@
-'use strict';
-
 import Ractive from 'ractive';
-import Template from '../views/home-page.html';
+import Template from '../../views/home-page.html';
 
-var HomePage = Ractive.extend({
-	template: Template,
-	data: {}
+var HomePage = Ractive.components.HomePage = Ractive.extend({
+	template: Template
 });
 HomePage._name = 'HomePage';
-
-Ractive.components.HomePage = HomePage;
 
 export default HomePage;

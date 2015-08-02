@@ -44,7 +44,7 @@ export function getJson(url, options = {cache: false}) {
 	}
 }
 
-export function put(url, data) {
+export function putJson(url, data) {
 	return fetch(url, {
 			method: 'put',
 			headers: {

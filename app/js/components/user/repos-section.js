@@ -1,5 +1,5 @@
 import Ractive from 'ractive';
-import Template from '../../views/user/repos-section.html';
+import Template from '../../../views/user/repos-section.html';
 
 var ReposSection = Ractive.extend({
 	isolated: true,

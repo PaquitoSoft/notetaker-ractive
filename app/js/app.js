@@ -1,37 +1,37 @@
 import Ractive from 'ractive';
-import Template from './views/app.html';
-import RouterComponent from './components/layout/router';
-import SearchGithub from './components/layout/search-github';
+import template from '../views/app.html';
+
 import * as RouterPlugin from './plugins/router';
-import routes from './config/routes';
+import routesConfiguration from './config/routes';
+
+import RouterComponent from './components/layout/router';
+import SearchUserComponent from './components/layout/search-user';
+import HomePageComponent from './components/home-page';
+import UserPageComponent from './components/user-page'
+
+
 
 let App = new Ractive({
 	el: '#app',
-
-	template: Template,
-
+	template: template,
 	components: {
-		// We need a first blank component before router tells us which page we must show
-		Void: Ractive.extend({template:''}),
-		SearchGithub: SearchGithub,
-		Router: RouterComponent
+		SearchUser: SearchUserComponent,
+		Router: RouterComponent,
+		EmptyPage: Ractive.extend({ template: '' })
 	},
-
-	onrender: function() {
-		RouterPlugin.init(routes, this.onNavigation.bind(this));
-		console.info('App::onrender# Application rendered!');
-	},
-
 	data: {
-		componentName: 'Void'
+		componentName: 'EmptyPage'
 	},
-
-	onNavigation: function(error, navigationContext) {
+	oninit() {
+		RouterPlugin.init(routesConfiguration, this.onNavigation.bind(this));
+		console.log('App::oninit# Application initialized!');
+	},
+	onNavigation(error, navigationContext) {
 		console.log('APP::onNavigation# Navigating to:', navigationContext.pageName, 'with context:', navigationContext);
 
 		if (error) {
 			console.warn('App::onNavigation# Error navigating:', error);
-			this.showAlert(error.message);
+			this.showAlert(error.displayMessage || error.message);
 		} else {
 			this.set({
 				req: {
@@ -40,14 +40,9 @@ let App = new Ractive({
 				},
 				componentName: navigationContext.pageName
 			});
-
-			if (this.get('componentName') === navigationContext.pageName) {
-				this.findComponent('Router').reset();
-			}
 		}
 	},
-
-	showAlert: function(message) {
+	showAlert(message) {
 		this.set('errorMsg', message);
 		setTimeout(() => {
 			this.set('errorMsg', null);

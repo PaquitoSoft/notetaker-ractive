@@ -19,7 +19,7 @@ routes.set('/user/:username', (context, next) => {
 			});
 		})
 		.catch((err) => {
-			err.message = 'User data not found!';
+			err.displayMessage = 'User data not found!';
 			next(err);
 		});
 });

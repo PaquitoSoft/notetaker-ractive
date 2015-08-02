@@ -1,16 +1,16 @@
 'use strict';
 
 import Ractive from 'ractive';
-import AddNote from './notes/add-note';
-import NotesList from './notes/notes-list';
-import Template from '../../views/user/notes-section.html';
+import template from '../../../views/user/notes-section.html';
+import AddNoteComponent from './notes/add-note';
+import NotesListComponent from './notes/notes-list';
 
 var NotesSection = Ractive.extend({
 	isolated: true,
-	template: Template,
+	template: template,
 	components: {
-		AddNote: AddNote,
-		NotesList: NotesList
+		AddNote: AddNoteComponent,
+		NotesList: NotesListComponent
 	}
 });
 

@@ -1,7 +1,6 @@
 import Ractive from 'ractive';
+import Template from '../../../views/layout/search-user.html';
 import * as router from '../../plugins/router';
-import User from '../../models/user';
-import Template from '../../views/layout/search-github.html';
 
 var SearchGithub = Ractive.extend({
 	isolated: true,
@@ -9,9 +8,8 @@ var SearchGithub = Ractive.extend({
 
 	oninit() {
 		this.on('searchUser', (rEvent) => {
-			let username = this.get('query');
 			rEvent.original.preventDefault();
-			router.navTo(`/user/${username}`);
+			router.navTo(`/user/${rEvent.context.query}`);
 			this.set('query', '');
 		});
 	},

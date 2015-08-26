@@ -1,20 +1,24 @@
-import Ractive from 'ractive';
+// import Ractive from 'ractive';
+import { BasePage } from 'ps-ractive-router';
 import Template from '../../views/user-page.html';
 import UserProfile from './user/profile-section';
 import Repos from './user/repos-section';
 import Notes from './user/notes-section';
 
-var UserPage = Ractive.components.UserPage = Ractive.extend({
+var UserPage = BasePage.extend({
 	template: Template,
 	components: {
 		UserProfile: UserProfile,
 		Repos: Repos,
 		Notes: Notes
 	},
+	onRequestDone: function(request) {
+		this.set('user', request.body.user);
+	},
 	oninit() {
-		this.observe('req', (request) => {
-			this.set('user', request.body.user);
-		});
+		// this.observe('req', (request) => {
+		// 	this.set('user', request.body.user);
+		// });
 
 		// *.*, *.AddUserNote, AddNote.*, AddNote.AddUserNote
 		this.on('*.AddUserNote', (newNote) => {
@@ -27,6 +31,6 @@ var UserPage = Ractive.components.UserPage = Ractive.extend({
 		});
 	}
 });
-UserPage._name = 'UserPage';
+// UserPage._name = 'UserPage';
 
 export default UserPage;

@@ -6,6 +6,9 @@ module.exports = {
 	output: {
 		filename: './dist/js/app-bundle.js'
 	},
+	resolveLoader: {
+		root: require('path').join(__dirname, 'node_modules')
+	},
 	module: {
 		loaders: [
 			{

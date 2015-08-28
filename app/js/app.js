@@ -1,8 +1,8 @@
-import Ractive from 'ractive';
+// import Ractive from 'ractive';
 import { BaseApp } from 'ps-ractive-router';
 import template from '../views/app.html';
 
-import * as RouterPlugin from './plugins/router';
+// import * as RouterPlugin from './plugins/router';
 import routesConfiguration from './config/routes';
 
 // import RouterComponent from './components/layout/router';

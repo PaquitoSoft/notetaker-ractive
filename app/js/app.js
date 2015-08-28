@@ -22,7 +22,9 @@ let App = new Ractive({
 	data: {
 		componentName: 'EmptyPage'
 	},
-	oninit() {
+	oncomplete() {
+		// Wait for the app to be rendered so we properly handle transition
+		// from EmptyPage to the one the URL dictates
 		RouterPlugin.init(routesConfiguration, this.onNavigation.bind(this));
 		console.log('App::oninit# Application initialized!');
 	},

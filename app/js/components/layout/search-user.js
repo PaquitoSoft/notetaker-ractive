@@ -1,7 +1,6 @@
 import Ractive from 'ractive';
 import { RouterManager } from 'ps-ractive-router';
 import Template from '../../../views/layout/search-user.html';
-// import * as router from '../../plugins/router';
 
 var SearchGithub = Ractive.extend({
 	isolated: true,

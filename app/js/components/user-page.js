@@ -6,6 +6,7 @@ import Repos from './user/repos-section';
 import Notes from './user/notes-section';
 
 var UserPage = BasePage.extend({
+	name: 'UserPage',
 	template: Template,
 	components: {
 		UserProfile: UserProfile,
@@ -13,7 +14,7 @@ var UserPage = BasePage.extend({
 		Notes: Notes
 	},
 	onRequestDone: function(request) {
-		this.set('user', request.body.user);
+		this.set('user', request.locals.user);
 	},
 	oninit() {
 		// this.observe('req', (request) => {

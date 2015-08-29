@@ -7,6 +7,7 @@ module.exports = {
 		filename: './dist/js/app-bundle.js'
 	},
 	resolveLoader: {
+		// I need this to allow using locally linked npm modules
 		root: require('path').join(__dirname, 'node_modules')
 	},
 	module: {

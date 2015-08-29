@@ -18,7 +18,7 @@ let App = BaseApp.extend({
 		SearchUser: SearchUserComponent,
 	},
 	routesConfiguration: routesConfiguration,
-	showAlert(message) {
+	showError(message) {
 		this.set('errorMsg', message);
 		setTimeout(function() {
 			this.set('errorMsg', null);

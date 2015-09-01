@@ -16,13 +16,12 @@
     "webpack": "^1.10.5",
     "exports-loader": "^0.6.2",
     "imports-loader": "^0.6.4",
-    "whatwg-fetch": "^0.9.0"
+    "whatwg-fetch": "^0.9.0",
+    "raw-loader": "^0.5.1"
   },
   "dependencies": {
     "es6-promise": "^3.0.2",
     "lscache": "^1.0.5",
-    "page": "^1.6.3",
-    "ractive": "^0.7.3",
-    "raw-loader": "^0.5.1"
+    "ractive": "^0.7.3"
   }
 }
